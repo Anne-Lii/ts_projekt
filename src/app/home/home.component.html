@@ -1,7 +1,34 @@
 <main id="main_home">
-<h2>M5 Universitetets kurser</h2>
+    <h2>M5 Universitetets kurser</h2>
 
-<label for="search">Filtrera kurser: </label>
-<input type="text" id="search" name="search">
+    <label for="search">Filtrera kurser: </label>
+    <input type="text" id="search" name="search">
+
+    <select name="" id="">
+        <option value=""></option>
+    </select>
+
+    <table id="coursetable">
+        <thead>
+            <tr>
+                <th>Kurskod</th>
+                <th>Kursnamn</th>
+                <th>Poäng</th>
+                <th>Ämne</th>
+                <th>Kursplan</th>
+                <th>Lägg till</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let course of courselist">
+                <td> {{course.courseCode}}</td>
+                <td>{{course.courseName}}</td>
+                <td>{{course.points}}</td>
+                <td>{{course.subject}}</td>
+                <td>{{course.syllabus}}</td>
+                <td>knapp</td>
+            </tr>
+        </tbody>
+    </table>
 
 </main>
