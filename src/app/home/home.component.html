@@ -4,10 +4,15 @@
     <label for="search">Filtrera kurser: </label>
     <input type="text" id="search" name="search">
 
-    <select name="" id="">
-        <option value=""></option>
+    <label for="subjectFilter">Ämne: </label>
+    <select name="subjectFilter" id="subjectFilter" (change)="filterCoursesBySubject($event)">
+        <option value="">Välj ämne</option>
+        <option *ngFor="let subject of uniqueSubjects" [value]="subject" id="sub">{{ subject }}</option>
     </select>
-
+    
+    <!-- div for showing number of courses shown -->
+    <div id="quantity"></div>
+    
     <table id="coursetable">
         <thead>
             <tr>
@@ -21,11 +26,11 @@
         </thead>
         <tbody>
             <tr *ngFor = "let course of courselist">
-                <td> {{course.courseCode}}</td>
+                <td>{{course.courseCode}}</td>
                 <td>{{course.courseName}}</td>
                 <td>{{course.points}}</td>
                 <td>{{course.subject}}</td>
-                <td>{{course.syllabus}}</td>
+                <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
                 <td>knapp</td>
             </tr>
         </tbody>
