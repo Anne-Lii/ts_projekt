@@ -9,9 +9,9 @@
         <option value="">Välj ämne</option>
         <option *ngFor="let subject of uniqueSubjects" [value]="subject" id="sub">{{ subject }}</option>
     </select>
-    
+
     <!-- div for showing number of courses shown -->
-    <div id="quantity"></div>
+    <div id="quantity"> Antal kurser: {{ filteredCount }} st.</div>
     
     <table id="coursetable">
         <thead>

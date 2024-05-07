@@ -14,6 +14,7 @@ export class HomeComponent {
 
   courselist: CourseInterface[] = [];//Array to store list with courses
   uniqueSubjects: string[] = [];//Array to store uniqu subjects
+  filteredCount: number = 0;//filteredCount set to 0
 
   constructor(private coursedataservice: CoursedataService) { }
 
@@ -23,6 +24,7 @@ export class HomeComponent {
       this.courselist = data;
 
       this.extractUniqueSubjects();//calls function to extract unique subjects
+      this.filteredCount = this.courselist.length;//Initially set filteredCount to total number of courses
     })
   }
 
@@ -37,10 +39,12 @@ export class HomeComponent {
     if (!selectedSubject) {
       this.coursedataservice.getCourses().subscribe(data => {
         this.courselist = data;
+        this.filteredCount = this.courselist.length;//update filteredCount to total number of courses
       });
     } else {
       this.coursedataservice.getCourses().subscribe(data => {
         this.courselist = data.filter(course => course.subject === selectedSubject);
+        this.filteredCount = this.courselist.length; //Update filteredCount to number of filtered courses
       });
     }
   }

@@ -14,6 +14,6 @@ export class CoursedataService {
   
   //method to get courses with http client
   getCourses(): Observable<CourseInterface[]> {
-    return this.http.get<CourseInterface[]>(this.url);//http call
+    return this.http.get<CourseInterface[]>(this.url);
   }
 }
