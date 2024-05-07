@@ -2,7 +2,8 @@
     <h2>M5 Universitetets kurser</h2>
 
     <label for="search">Filtrera kurser: </label>
-    <input type="text" id="search" name="search">
+    <input type="text" id="search" name="search" [(ngModel)]="searchInput" (input)="searchCourses()">
+
 
     <label for="subjectFilter">Ämne: </label>
     <select name="subjectFilter" id="subjectFilter" (change)="filterCoursesBySubject($event)">
