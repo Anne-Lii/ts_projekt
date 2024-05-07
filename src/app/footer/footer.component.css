@@ -1,5 +1,9 @@
 footer {
     height: 100px;
+    width: 100%;
     text-align: center;
-    background-color: aqua;
+    background-color: rgb(32, 100, 100);
+    position: fixed;
+    bottom: 0;
+    color: #fff;
 }

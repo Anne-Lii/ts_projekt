@@ -6,7 +6,7 @@ header {
 #navcontainer {
     height: 50px;
     width: 100%;
-    background-color: aquamarine;
+    background-color: rgb(32, 100, 100);
 }
 
 nav ul {
@@ -17,7 +17,7 @@ nav ul {
 
 nav ul li {
     
-    padding: 10px 40px;
+    padding: 12px 40px;
 }
 
 nav ul li:hover {
@@ -27,9 +27,11 @@ nav ul li:hover {
 nav ul li a {
     text-decoration: none;
     font-size: 24px;
+    color: #fff;
   
 }
 
 .current {
-  background-color: bisque;  
+    background-color: rgb(53, 160, 160);
+    padding: 11px;
 }
