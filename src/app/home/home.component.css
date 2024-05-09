@@ -30,8 +30,13 @@ input, select {
 }
 
 #coursetable th {
-    padding: 2px 10px;
+    padding: 4px 0 4px 3px;
     text-align: left;
+    
+}
+#coursetable th:hover {
+    cursor: pointer;
+    
 }
 
 #coursetable th:nth-child(6) {
@@ -40,4 +45,9 @@ input, select {
 
 #coursetable td {
     padding: 10px 5px;
+}
+
+.headerAndArrow i {
+    margin-left: 5px; 
+    min-width: 160px;
 }

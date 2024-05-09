@@ -2,12 +2,12 @@
     <h2>M5 Universitetets kurser</h2>
 
     <label for="search">Filtrera kurser: </label>
-    <input type="text" id="search" name="search" [(ngModel)]="searchInput" (input)="searchCourses()">
+  <input type="text" id="search" name="search" [(ngModel)]="searchInput" (input)="searchCourses()">
 
 
     <label for="subjectFilter">Ämne: </label>
     <select name="subjectFilter" id="subjectFilter" (change)="filterCoursesBySubject($event)">
-        <option value="">Välj ämne</option>
+        <option value="">Alla ämnen</option>
         <option *ngFor="let subject of uniqueSubjects" [value]="subject" id="sub">{{ subject }}</option>
     </select>
 
@@ -17,10 +17,10 @@
     <table id="coursetable">
         <thead>
             <tr>
-                <th>Kurskod</th>
-                <th>Kursnamn</th>
-                <th>Poäng</th>
-                <th>Ämne</th>
+                <th class="headerAndArrow" (click)="sortCourses('courseCode')">Kurskod <i class="fa fa-sort"></i></th>
+                <th class="headerAndArrow" (click)="sortCourses('courseName')">Kursnamn <i class="fa fa-sort"></i></th>
+                <th class="headerAndArrow" (click)="sortCourses('points')">Poäng <i class="fa fa-sort"></i></th>
+                <th class="headerAndArrow" (click)="sortCourses('subject')">Ämne <i class="fa fa-sort"></i></th>
                 <th>Kursplan</th>
                 <th>Lägg till</th>
             </tr>

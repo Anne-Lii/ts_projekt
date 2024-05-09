@@ -18,6 +18,8 @@ export class HomeComponent {
   uniqueSubjects: string[] = [];//Array to store unique subjects
   filteredCount: number = 0;//number of courses set to 0
   searchInput: string = "";//empty string for searchinput
+  currentSortColumn: keyof CourseInterface = "courseCode"; //starting with courseCode sorted
+  isSortAscending: boolean = true;
 
 
   constructor(private coursedataservice: CoursedataService) { }
@@ -25,10 +27,10 @@ export class HomeComponent {
   //subscribe to the getCourses method
   ngOnInit() {
     this.coursedataservice.getCourses().subscribe(data => {
-      this.courselist = data;
-      this.originalCourselist = [...this.courselist];
+      this.courselist = data;//Initialize courselist with data from jsonfile
+      this.originalCourselist = [...this.courselist];// Initialize originalCourselist
       this.extractUniqueSubjects();//calls function to extract unique subjects
-      this.filteredCount = this.courselist.length;//Initially set filteredCount to total number of courses
+      this.filteredCount = this.courselist.length;// sets filteredCount to total number of courses
     })
   }
 
@@ -72,5 +74,32 @@ export class HomeComponent {
   resetCourses(): void {
     this.courselist = [...this.originalCourselist];
     this.filteredCount = this.courselist.length;
+  }
+
+  //function to sort courses based on selected headline
+  sortCourses(column: keyof CourseInterface) : void {
+
+    this.courselist.sort((a,b) => {
+
+      //get values from selected column
+      const valueA = a[column];
+      const valueB = b[column];
+
+      //sorting order based on current sorting direction
+      const sortOrder = this.isSortAscending ? 1 : -1;
+
+      //compare and return result based on sort direction
+      if (valueA < valueB) {
+        return -1 * sortOrder;
+      }else if (valueA > valueB) {
+        return 1 * sortOrder;
+      } else {
+        return 0;
+      }
+    });
+
+    this.courselist.reverse();
+
+    this.isSortAscending = !this.isSortAscending;
   }
 }
