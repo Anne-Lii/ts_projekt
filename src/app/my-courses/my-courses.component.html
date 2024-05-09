@@ -1,11 +1,11 @@
 
-<main id="main_home">
+<main id="main_timetable">
     <h2>Mitt ramschema</h2>
 
     <!-- div for showing number of courses shown -->
-    <div id="quantity"> Antal kurser: st.</div>
+    <div id="quantity_timetable"> Antal kurser: {{myCourses.length}}st.</div>
     
-    <table id="coursetable">
+    <table id="myCourseTable">
         <thead>
             <tr>
                 <th>Kurskod </th>
@@ -17,13 +17,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr >
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><button id="addBtn">X</button></td>
+            <tr *ngFor="let course of myCourses">
+                <td>{{course.courseCode}}</td>
+                <td>{{course.courseName}}</td>
+                <td>{{ course.points }}</td>
+                <td>{{ course.subject }}</td>
+                <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
+                <td><button id="removeBtn" (click)="removeCourse(course)">X</button></td>
             </tr>
         </tbody>
     </table>

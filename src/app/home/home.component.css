@@ -1,3 +1,7 @@
+#main_home {
+    width: 100%;
+}
+
 h2, label {
     padding: 20px 0 20px 50px;
 }
@@ -17,6 +21,8 @@ select {
     font-size: 20px;
     color: rgb(116, 111, 111);
 }
+
+
 
 #coursetable {
     width: 95%;
@@ -67,3 +73,15 @@ select {
     border-radius: 3px;
 
 }
+
+//smaller screns than 600px
+@media screen and (max-width: 600px) {
+    /* Stilar som ska tillämpas när skärmens bredd är maximalt 600px */
+    body {
+      font-size: 14px;
+    }
+    #table_container {
+      overflow-x: scroll;
+    }
+  }
+  

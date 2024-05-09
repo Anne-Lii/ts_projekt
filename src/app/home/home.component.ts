@@ -106,4 +106,10 @@ export class HomeComponent {
 
     this.isSortAscending = !this.isSortAscending;
   }
+
+  //call addToMyCourses from timetable service
+  addToMyCourses(course: CourseInterface): void {
+    this.timeTableService.addToMyCourses(course);
+}
+  
 }
