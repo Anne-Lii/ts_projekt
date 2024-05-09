@@ -13,16 +13,16 @@ select {
 }
 
 #quantity {
-    padding: 30px 0 0 50px;
+    padding: 40px 0 0 50px;
     font-size: 20px;
     color: rgb(116, 111, 111);
 }
 
 #coursetable {
-    width: 90%;
+    width: 95%;
     margin: auto;
     line-height: 1.5em;
-   padding-top: 40px;
+   padding-top: 20px;
    padding-bottom: 200px;
 }
 
@@ -58,4 +58,12 @@ select {
 
 .headerAndArrow i {
     margin-left: 5px;
+}
+
+#addBtn {
+    padding: 5px 7px;
+    background-color: rgb(32, 100, 100);
+    color: #fff;
+    border-radius: 3px;
+
 }

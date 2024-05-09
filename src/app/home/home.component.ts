@@ -3,6 +3,7 @@ import { CourseInterface } from '../model/course-interface';
 import { CoursedataService } from '../services/coursedata.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgModel } from '@angular/forms';
+import { TimetableService } from '../services/timetable.service';
 
 @Component({
   selector: 'app-home',
@@ -22,7 +23,10 @@ export class HomeComponent {
   isSortAscending: boolean = true;
 
 
-  constructor(private coursedataservice: CoursedataService) { }
+  constructor(
+    private coursedataservice: CoursedataService, //inject coursedataservie
+    private timeTableService: TimetableService //inject timetableservice
+  ) { }
 
   //subscribe to the getCourses method
   ngOnInit() {
