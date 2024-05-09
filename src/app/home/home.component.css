@@ -71,17 +71,12 @@ select {
     background-color: rgb(32, 100, 100);
     color: #fff;
     border-radius: 3px;
+    cursor: pointer;
 
 }
 
-//smaller screns than 600px
+
 @media screen and (max-width: 600px) {
-    /* Stilar som ska tillämpas när skärmens bredd är maximalt 600px */
-    body {
-      font-size: 14px;
-    }
-    #table_container {
-      overflow-x: scroll;
-    }
+    
   }
   

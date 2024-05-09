@@ -34,4 +34,12 @@ export class TimetableService {
     }
   }
 
+  // function to calculate total points of all courses
+  getTotalPoints(): number {
+    const courses: CourseInterface[] = this.getMyCourses();
+    return courses.reduce((total, course) => total + course.points, 0);
+  }
+  
+
+
 }
