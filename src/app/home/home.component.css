@@ -2,9 +2,14 @@ h2, label {
     padding: 20px 0 20px 50px;
 }
 
-input, select {
+input {
     height: 28px;
-    width: 30%;
+    width: 300px;
+}
+
+select {
+    height: 32px;
+    width: 333px;
 }
 
 #quantity {
@@ -17,7 +22,8 @@ input, select {
     width: 90%;
     margin: auto;
     line-height: 1.5em;
-    padding-top: 40px;
+   padding-top: 40px;
+   padding-bottom: 200px;
 }
 
 #coursetable tr:nth-child(odd)  {
@@ -25,17 +31,20 @@ input, select {
 }
 
 #coursetable thead tr {
+   
     background-color: rgb(32, 100, 100);
     color: #fff;
 }
 
-#coursetable th {
-    padding: 4px 0 4px 3px;
+#coursetable thead th {
+ 
+    padding: 4px 10px;
     text-align: left;
-    
 }
-#coursetable th:hover {
+
+.headerAndArrow:hover {
     cursor: pointer;
+    text-decoration: underline;
     
 }
 
@@ -48,6 +57,5 @@ input, select {
 }
 
 .headerAndArrow i {
-    margin-left: 5px; 
-    min-width: 160px;
+    margin-left: 5px;
 }

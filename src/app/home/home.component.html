@@ -1,9 +1,9 @@
 <main id="main_home">
     <h2>M5 Universitetets kurser</h2>
 
-    <label for="search">Filtrera kurser: </label>
+    <label for="search">Sök kurser: </label>
   <input type="text" id="search" name="search" [(ngModel)]="searchInput" (input)="searchCourses()">
-
+  <br><br>
 
     <label for="subjectFilter">Ämne: </label>
     <select name="subjectFilter" id="subjectFilter" (change)="filterCoursesBySubject($event)">
@@ -17,10 +17,10 @@
     <table id="coursetable">
         <thead>
             <tr>
-                <th class="headerAndArrow" (click)="sortCourses('courseCode')">Kurskod <i class="fa fa-sort"></i></th>
-                <th class="headerAndArrow" (click)="sortCourses('courseName')">Kursnamn <i class="fa fa-sort"></i></th>
-                <th class="headerAndArrow" (click)="sortCourses('points')">Poäng <i class="fa fa-sort"></i></th>
-                <th class="headerAndArrow" (click)="sortCourses('subject')">Ämne <i class="fa fa-sort"></i></th>
+                <th class="headerAndArrow" (click)="sortCourses('courseCode')">Kurskod </th>
+                <th class="headerAndArrow" (click)="sortCourses('courseName')">Kursnamn </th>
+                <th class="headerAndArrow" (click)="sortCourses('points')">Poäng </th>
+                <th class="headerAndArrow" (click)="sortCourses('subject')">Ämne </th>
                 <th>Kursplan</th>
                 <th>Lägg till</th>
             </tr>
