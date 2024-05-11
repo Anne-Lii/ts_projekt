@@ -1,8 +1,11 @@
 #main_home {
     width: 100%;
+    max-width: 900px;
+    margin: auto;
 }
 
-h2, label {
+h2,
+label {
     padding: 20px 0 20px 50px;
 }
 
@@ -22,28 +25,26 @@ select {
     color: rgb(116, 111, 111);
 }
 
-
-
 #coursetable {
     width: 95%;
     margin: auto;
     line-height: 1.5em;
-   padding-top: 20px;
-   padding-bottom: 200px;
+    padding-top: 20px;
+    padding-bottom: 200px;
 }
 
-#coursetable tr:nth-child(odd)  {
-   background-color: rgba(32, 100, 100, 0.068);
+#coursetable tr:nth-child(odd) {
+    background-color: rgba(32, 100, 100, 0.068);
 }
 
 #coursetable thead tr {
-   
+
     background-color: rgb(32, 100, 100);
     color: #fff;
 }
 
 #coursetable thead th {
- 
+
     padding: 4px 10px;
     text-align: left;
 }
@@ -51,7 +52,7 @@ select {
 .headerAndArrow:hover {
     cursor: pointer;
     text-decoration: underline;
-    
+
 }
 
 #coursetable th:nth-child(6) {
@@ -62,9 +63,6 @@ select {
     padding: 10px 5px;
 }
 
-.headerAndArrow i {
-    margin-left: 5px;
-}
 
 #addBtn {
     padding: 5px 7px;
@@ -75,8 +73,24 @@ select {
 
 }
 
-
-@media screen and (max-width: 600px) {
-    
+/* Stilar för meddelandediv */
+.added-message {
+    position: fixed;
+    top: -100px; /* Göm div ovanför sidans övre kant */
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #fff; /* Justera bakgrundsfärgen efter behov */
+    text-align: center;
+    line-height: 100px; /* Justera linjehöjden för vertikal centrerad text */
+    transition: top 0.5s ease; /* Använd CSS-övergång för att animera rörelsen */
   }
   
+  /* Stilar för att visa meddelandediv */
+  .added-message.show {
+    top: 0; /* Visa div genom att flytta den nedåt */
+  }
+  
+
+
+@media screen and (max-width: 600px) {}

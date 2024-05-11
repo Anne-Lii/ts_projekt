@@ -3,9 +3,9 @@
     <h2>Mitt ramschema</h2>
 
     <!-- div for showing number of courses shown -->
-    <div id="quantity_timetable"> Antal kurser: {{myCourses.length}}st.</div>
+    <div id="quantity_timetable"> Antal kurser: {{myCourses.length}} st.</div>
 
-    <div id="totalpoints">Totalt antal poäng: {{totalPoints}}</div>
+    <div id="totalpoints">Totalt antal poäng: {{totalPoints}} HP</div>
     
     <table id="myCourseTable">
         <thead>
@@ -25,7 +25,7 @@
                 <td>{{ course.points }}</td>
                 <td>{{ course.subject }}</td>
                 <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
-                <td><button id="removeBtn" (click)="removeCourse(course)">X</button></td>
+                <td  id="removeBtnSection"><button id="removeBtn" (click)="removeCourse(course)">X</button></td>
             </tr>
         </tbody>
     </table>

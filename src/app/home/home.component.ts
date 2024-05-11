@@ -22,6 +22,8 @@ export class HomeComponent {
   currentSortColumn: keyof CourseInterface = "courseCode"; //starting with courseCode sorted
   isSortAscending: boolean = true;
 
+ 
+
 
   constructor(
     private coursedataservice: CoursedataService, //inject coursedataservie
@@ -35,7 +37,9 @@ export class HomeComponent {
       this.originalCourselist = [...this.courselist];// Initialize originalCourselist
       this.extractUniqueSubjects();//calls function to extract unique subjects
       this.filteredCount = this.courselist.length;// sets filteredCount to total number of courses
-    })
+    });
+
+  
   }
 
   //function to extract unique subjects from courses
@@ -81,9 +85,9 @@ export class HomeComponent {
   }
 
   //function to sort courses based on selected headline
-  sortCourses(column: keyof CourseInterface) : void {
+  sortCourses(column: keyof CourseInterface): void {
 
-    this.courselist.sort((a,b) => {
+    this.courselist.sort((a, b) => {
 
       //get values from selected column
       const valueA = a[column];
@@ -95,7 +99,7 @@ export class HomeComponent {
       //compare and return result based on sort direction
       if (valueA < valueB) {
         return -1 * sortOrder;
-      }else if (valueA > valueB) {
+      } else if (valueA > valueB) {
         return 1 * sortOrder;
       } else {
         return 0;
@@ -109,7 +113,10 @@ export class HomeComponent {
 
   //call addToMyCourses from timetable service
   addToMyCourses(course: CourseInterface): void {
+    
     this.timeTableService.addToMyCourses(course);
-}
-  
+
+   
+  }
+
 }
