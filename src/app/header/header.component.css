@@ -19,8 +19,7 @@ nav ul {
     justify-content: center;
 }
 
-nav ul li {
-    
+nav ul li {    
     padding: 12px 40px;
 }
 
@@ -31,11 +30,23 @@ nav ul li:hover {
 nav ul li a {
     text-decoration: none;
     font-size: 24px;
-    color: #fff;
-  
+    color: #fff;  
 }
 
 .current {
     background-color:  rgb(48, 145, 145);
     padding: 11px;
+}
+
+@media screen and (max-width: 800px) {
+    nav ul li a {
+        text-decoration: none;
+        font-size: 18px;
+        color: #fff;  
+    }
+
+    .current {
+        background-color:  rgb(48, 145, 145);
+        padding:12px;
+    }
 }

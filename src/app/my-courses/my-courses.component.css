@@ -9,17 +9,20 @@ h2 {
 }
 
 #quantity_timetable, #totalpoints {
-    padding: 10px 0 0 50px;
+    padding: 10px 0 10px 50px;
     font-size: 20px;
     color: rgb(87, 83, 83);
 }
 
 #myCourseTable {
-    width: 95%;
+    width: 100%;
     margin: auto;
-    line-height: 1.5em;
-    padding-top: 20px;
-    padding-bottom: 200px;
+    line-height: 1.2em; 
+    padding: 5px;
+    margin-bottom: 200px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px grey;
 }
 
 #myCourseTable tr:nth-child(odd) {
