@@ -1,0 +1,135 @@
+#main_home {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+h2,
+label {
+    padding: 20px 0 20px 50px;
+}
+p {
+    font-size: 18px;
+    padding: 20px 0 30px 50px;
+}
+
+input {
+    height: 28px;
+    width: 300px;
+}
+
+select {
+    height: 32px;
+    width: 333px;
+}
+
+#quantity {
+    padding: 30px 0 20px 50px;
+    font-size: 20px;
+    color: rgb(116, 111, 111);
+}
+
+#table_container {
+    width: 100%;
+    margin-bottom: 200px;
+}
+
+#coursetable {
+    width: 100%;
+    margin: auto;
+    line-height: 1.2em; 
+    padding: 30px;
+    margin-bottom: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px grey;
+}
+
+#coursetable tr:nth-child(odd) {
+    background-color: rgba(32, 100, 100, 0.068);
+}
+
+#coursetable thead tr {
+    background-color: rgb(32, 100, 100);
+    color: #fff;
+}
+
+#coursetable thead th {
+    padding: 4px 10px;
+    text-align: left;
+}
+
+#coursetable thead th:nth-child(6) {
+    white-space: nowrap;
+}
+
+.headerAndArrow:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#coursetable td {
+    padding: 5px;
+}
+
+#addBtnSection {
+    text-align: center;
+}
+
+#addBtn {
+    padding: 2px 7px;
+    background-color: rgb(32, 100, 100);
+    color: #fff;
+    font-size: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.no-courses-message {
+    padding: 20px 0 0 50px;
+    font-size: 18px;
+    color: rgb(243, 146, 18);
+}
+
+.pagination {
+    padding:10px 15px;
+    color: #000;
+    float: right;
+}
+
+.pagination::ng-deep .ngx-pagination .current{
+    background-color: rgb(32, 100, 100);
+}
+  
+
+@media screen and (max-width: 800px) {
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #quantity {
+        padding: 40px 0 0 50px;
+        font-size: 14px;
+        color: rgb(116, 111, 111);
+    }
+
+    #coursetable {
+        width: 100%;
+        margin: auto;
+        line-height: 1em;
+        font-size: 14px;
+        margin: 20px 0 200px 0;
+    }
+    
+    #coursetable thead th {
+        padding: 4px 5px;
+        text-align: left;
+    }
+
+    #coursetable td {
+        padding: 3px;
+    }
+
+   
+}
