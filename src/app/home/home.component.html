@@ -2,8 +2,8 @@
     <h2>M5 Universitetets kurser</h2>
 
     <label for="search">Sök kurser: </label>
-  <input type="text" id="search" name="search" [(ngModel)]="searchInput" (input)="searchCourses()">
-  <br><br>
+    <input type="text" id="search" name="search" [(ngModel)]="searchInput" (input)="searchCourses()">
+    <br><br>
 
     <label for="subjectFilter">Ämne: </label>
     <select name="subjectFilter" id="subjectFilter" (change)="filterCoursesBySubject($event)">
@@ -13,30 +13,32 @@
 
     <!-- div for showing number of courses shown -->
     <div id="quantity"> Antal kurser: {{ filteredCount }} st.</div>
-    
-   <div id="table_container">
-    <table id="coursetable">
-        <thead>
-            <tr>
-                <th class="headerAndArrow" (click)="sortCourses('courseCode')">Kurskod </th>
-                <th class="headerAndArrow" (click)="sortCourses('courseName')">Kursnamn </th>
-                <th class="headerAndArrow" (click)="sortCourses('points')">Poäng </th>
-                <th class="headerAndArrow" (click)="sortCourses('subject')">Ämne </th>
-                <th>Kursplan</th>
-                <th>Lägg till</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor = "let course of courselist">
-                <td>{{course.courseCode}}</td>
-                <td>{{course.courseName}}</td>
-                <td>{{course.points}}</td>
-                <td>{{course.subject}}</td>
-                <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
-                <td id="addBtnSection"><button id="addBtn" (click)="addToMyCourses(course)">+</button></td>
-            </tr>
-        </tbody>
-    </table>
-   </div>
+
+    <div id="table_container">
+        <table id="coursetable">
+            <thead>
+                <tr>
+                    <th class="headerAndArrow" (click)="sortCourses('courseCode')">Kurskod </th>
+                    <th class="headerAndArrow" (click)="sortCourses('courseName')">Kursnamn </th>
+                    <th class="headerAndArrow" (click)="sortCourses('points')">Poäng </th>
+                    <th class="headerAndArrow" (click)="sortCourses('subject')">Ämne </th>
+                    <th>Kursplan</th>
+                    <th>Lägg till</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of courselist">
+                    <td>{{course.courseCode}}</td>
+                    <td>{{course.courseName}}</td>
+                    <td>{{course.points}}</td>
+                    <td>{{course.subject}}</td>
+                    <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
+                    <td id="addBtnSection"><button id="addBtn" (click)="addToMyCourses(course)">+</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <app-pagination [currentPage]="currentPage" [totalPages]="totalPages"
+        (pageChange)="onPageChange($event)"></app-pagination>
 
 </main>

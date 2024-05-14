@@ -4,11 +4,12 @@ import { CoursedataService } from '../services/coursedata.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgModel } from '@angular/forms';
 import { TimetableService } from '../services/timetable.service';
+import { PaginationComponent } from '../pagination/pagination.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, PaginationComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -20,10 +21,11 @@ export class HomeComponent {
   filteredCount: number = 0;//number of courses set to 0
   searchInput: string = "";//empty string for searchinput
   currentSortColumn: keyof CourseInterface = "courseCode"; //starting with courseCode sorted
-  isSortAscending: boolean = true;
-
- 
-
+  isSortAscending: boolean = true;//sortingdirection
+  currentPage: number = 1;//starting on page 1
+  totalPages: number = 44;//how many pages
+  pageSize: number = 100;//number of courses on every page
+  totalCourses: number = 0;//total number of courses
 
   constructor(
     private coursedataservice: CoursedataService, //inject coursedataservie
@@ -37,9 +39,10 @@ export class HomeComponent {
       this.originalCourselist = [...this.courselist];// Initialize originalCourselist
       this.extractUniqueSubjects();//calls function to extract unique subjects
       this.filteredCount = this.courselist.length;// sets filteredCount to total number of courses
+      this.totalCourses = data.length;//set number of totalcourses
+      this.totalPages = Math.ceil(this.totalCourses / this.pageSize);//how many pages
+      this.updateDisplayedCourses();
     });
-
-  
   }
 
   //function to extract unique subjects from courses
@@ -107,16 +110,25 @@ export class HomeComponent {
     });
 
     this.courselist.reverse();
-
     this.isSortAscending = !this.isSortAscending;
   }
 
   //call addToMyCourses from timetable service
   addToMyCourses(course: CourseInterface): void {
-    
     this.timeTableService.addToMyCourses(course);
-
-   
   }
 
+  updateDisplayedCourses() {
+    // index on first and last course that shows on the page
+    const startIndex = (this.currentPage - 1) * this.pageSize;
+    const endIndex = Math.min(startIndex + this.pageSize, this.totalCourses);
+    
+    // get courses for this page
+    this.courselist = this.originalCourselist.slice(startIndex, endIndex);
+  }
+
+  onPageChange(page: number) {
+       this.currentPage = page;
+    this.updateDisplayedCourses();  
+  }
 }
