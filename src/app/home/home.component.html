@@ -11,8 +11,12 @@
         <option *ngFor="let subject of uniqueSubjects" [value]="subject" id="sub">{{ subject }}</option>
     </select>
 
+    <!-- Message if no courses found -->
+    <div *ngIf="courselist.length === 0" class="no-courses-message">Inga kurser hittades.</div>
+
     <!-- div for showing number of courses shown -->
     <div id="quantity"> Antal kurser: {{ filteredCount }} st.</div>
+
 
     <div id="table_container">
         <table id="coursetable">
@@ -38,7 +42,4 @@
             </tbody>
         </table>
     </div>
-    <app-pagination [currentPage]="currentPage" [totalPages]="totalPages"
-        (pageChange)="onPageChange($event)"></app-pagination>
-
 </main>

@@ -11,11 +11,10 @@ export class PaginationComponent {
   @Input() currentPage!: number;
   @Input() totalPages!: number;
 
+
   @Output() pageChange = new EventEmitter<number>();
 
-  goToFirstPage() {
-    this.pageChange.emit(1); // Go to first page
-  }  
+
 
   prevPage() {
     if(this.currentPage > 1) {
@@ -30,9 +29,4 @@ export class PaginationComponent {
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });//scrolls up to the top of the page
   }
-
-  goToLastPage() {
-    this.pageChange.emit(this.totalPages); //Go to last page
-  }
-
 }
