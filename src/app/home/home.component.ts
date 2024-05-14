@@ -1,8 +1,8 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { CourseInterface } from '../model/course-interface';
 import { CoursedataService } from '../services/coursedata.service';
 import { CommonModule } from '@angular/common';
-import { FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TimetableService } from '../services/timetable.service';
 
 @Component({
@@ -22,10 +22,11 @@ export class HomeComponent {
   currentSortColumn: keyof CourseInterface = "courseCode"; //starting with courseCode sorted
   isSortAscending: boolean = true;//sortingdirection  
 
+
   constructor(
     private coursedataservice: CoursedataService, //inject coursedataservie
     private timeTableService: TimetableService, //inject timetableservice
-   
+
   ) { }
 
   //subscribe to the getCourses method
@@ -35,19 +36,20 @@ export class HomeComponent {
       this.updateDisplayedCourses();
     });
   }
-  
+
 
 
   filterCoursesBySubject(event: any): void {
     const selectedSubject = event.target.value;
-    if (!selectedSubject) {
+    if (!selectedSubject || selectedSubject === "all") {
       this.resetCourses();
     } else {
       this.courselist = this.originalCourselist.filter(course => course.subject === selectedSubject);
       this.filteredCount = this.courselist.length;
-      this.extractUniqueSubjects();
     }
-  }
+}
+
+
 
   //function to search from searchinput
   searchCourses(): void {
@@ -69,8 +71,9 @@ export class HomeComponent {
   resetCourses(): void {
     this.courselist = [...this.originalCourselist];
     this.filteredCount = this.courselist.length;
-    this.extractUniqueSubjects();
-  }
+    this.extractUniqueSubjects(); // Uppdatera unika ämnen till att inkludera alla ämnen
+}
+
 
   //function to sort courses based on selected headline
   sortCourses(column: keyof CourseInterface): void {

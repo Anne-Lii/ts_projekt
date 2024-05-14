@@ -14,6 +14,10 @@
     <!-- Message if no courses found -->
     <div *ngIf="courselist.length === 0" class="no-courses-message">Inga kurser hittades.</div>
 
+     <!-- Message when added a course 
+     <div *ngIf="addToMyCourses()" class="course_added_message">Kursen tillaggd på ditt ramschema.</div>
+     -->
+
     <!-- div for showing number of courses shown -->
     <div id="quantity"> Antal kurser: {{ filteredCount }} st.</div>
 
