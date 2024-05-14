@@ -1,5 +1,9 @@
+
+
 <main id="main_home">
+
     <h2>M5 Universitetets kurser</h2>
+    <p>Sök bland våra kurser och skapa ditt egna ramschema. </p>
 
     <label for="search">Sök kurser: </label>
     <input type="text" id="search" name="search" [(ngModel)]="searchInput" (input)="searchCourses()">
@@ -11,16 +15,9 @@
         <option *ngFor="let subject of uniqueSubjects" [value]="subject" id="sub">{{ subject }}</option>
     </select>
 
-    <!-- Message if no courses found -->
+
     <div *ngIf="courselist.length === 0" class="no-courses-message">Inga kurser hittades.</div>
-
-     <!-- Message when added a course 
-     <div *ngIf="addToMyCourses()" class="course_added_message">Kursen tillaggd på ditt ramschema.</div>
-     -->
-
-    <!-- div for showing number of courses shown -->
     <div id="quantity"> Antal kurser: {{ filteredCount }} st.</div>
-
 
     <div id="table_container">
         <table id="coursetable">
@@ -35,7 +32,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let course of courselist">
+                <tr *ngFor="let course of courselist| paginate:{itemsPerPage:20, currentPage:page, totalItems: totalLength}">
                     <td>{{course.courseCode}}</td>
                     <td>{{course.courseName}}</td>
                     <td>{{course.points}}</td>
@@ -45,5 +42,10 @@
                 </tr>
             </tbody>
         </table>
+        <div class="pagination">
+            <pagination-controls (pageChange) ="page=$event"></pagination-controls>
+        </div>
     </div>
 </main>
+
+
