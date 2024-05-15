@@ -1,14 +1,15 @@
 #main_timetable {
     width: 100%;
-    max-width: 900px;
+    max-width: 1260px;
     margin: auto;
 }
 
 h2 {
-    padding: 30px 0 20px 25px;
+    padding: 30px 0 20px 50px;
 }
 
-#quantity_timetable, #totalpoints {
+#quantity_timetable,
+#totalpoints {
     padding: 10px 0 10px 50px;
     font-size: 20px;
     color: rgb(87, 83, 83);
@@ -17,7 +18,7 @@ h2 {
 #myCourseTable {
     width: 100%;
     margin: auto;
-    line-height: 1.2em; 
+    line-height: 1.2em;
     padding: 5px;
     margin-bottom: 200px;
     border: 1px solid lightgrey;
@@ -54,4 +55,41 @@ h2 {
     color: #fff;
     font-size: 16px;
     padding: 0 3px;
+}
+
+@media screen and (max-width: 612px) {
+
+    h2 {
+        padding: 90px 0 20px 30px;
+    }
+
+    #quantity_timetable,
+    #totalpoints {
+        padding: 10px 0 5px 30px;
+        font-size: 16px;
+    }
+
+    #table_container {
+        overflow-x: auto
+    }
+
+    #myCourseTable {
+        line-height: 1em;
+        margin: 20px 0 200px 0;
+    }
+
+
+    #myCourseTable thead th {
+        padding: 2px;
+        font-size: 12px;
+    }
+
+    #myCourseTable td {
+        padding: 10px 5px;
+        font-size: 12px;
+    }
+
+    #myCourseTable thead th:nth-child(6) {
+        white-space: nowrap;
+    }
 }

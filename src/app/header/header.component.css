@@ -7,7 +7,7 @@ header {
 }
 
 h1 {
-   padding: 50px 0 0 150px;
+    padding: 50px 0 0 150px;
     color: #fff;
     font-size: 52px;
 }
@@ -26,7 +26,7 @@ nav ul {
     justify-content: center;
 }
 
-nav ul li {    
+nav ul li {
     padding: 12px 40px;
 }
 
@@ -37,23 +37,39 @@ nav ul li:hover {
 nav ul li a {
     text-decoration: none;
     font-size: 24px;
-    color: #fff;  
+    color: #fff;
 }
 
 .current {
-    background-color:  rgb(48, 145, 145);
+    background-color: rgb(48, 145, 145);
     padding: 11px;
 }
 
-@media screen and (max-width: 800px) {
-    nav ul li a {
-        text-decoration: none;
-        font-size: 18px;
-        color: #fff;  
+@media screen and (max-width: 612px) {
+
+    header {       
+        height: 150px;    
+    }
+
+    h1 {
+        padding: 50px 0 0 30px;
+        font-size: 42px;
+    }
+
+    #navcontainer {
+        position: relative;
+        top: 50px;
+    }
+
+    nav ul li {
+        padding: 15px 25px;
+    }
+
+    nav ul li a {    
+        font-size: 12px;      
     }
 
     .current {
-        background-color:  rgb(48, 145, 145);
-        padding:12px;
+        padding: 17px;
     }
 }

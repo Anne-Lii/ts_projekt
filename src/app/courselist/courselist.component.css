@@ -1,16 +1,20 @@
 #main_home {
     width: 100%;
-    max-width: 900px;
+    max-width: 1260px;
     margin: auto;
 }
 
-h2,
-label {
-    padding: 20px 0 20px 50px;
+h2 {
+    padding: 60px 0 20px 50px;
 }
+
 p {
     font-size: 18px;
     padding: 20px 0 30px 50px;
+}
+
+label {
+    padding: 20px 0 20px 50px;
 }
 
 input {
@@ -32,6 +36,7 @@ select {
 #table_container {
     width: 100%;
     margin-bottom: 200px;
+    overflow-x: auto
 }
 
 #coursetable {
@@ -102,34 +107,47 @@ select {
 }
   
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 712px) {
 
     h2 {
-        font-size: 20px;
+        padding: 90px 0 20px 30px;
+        font-size: 28px;
+        
+    }
+    p {
+        font-size: 12px;
+        padding: 0 0 20px 30px;
+        
+    }
+    label {
+        padding: 20px 0 20px 30px;
+    }
+    
+    input {
+        margin: 0 0 0 30px;
+    }
+
+    select {
+        margin: 0 0 0 30px;
+        width: 305px;
     }
 
     #quantity {
-        padding: 40px 0 0 50px;
-        font-size: 14px;
-        color: rgb(116, 111, 111);
+        font-size: 16px;
     }
 
     #coursetable {
-        width: 100%;
-        margin: auto;
-        line-height: 1em;
-        font-size: 14px;
-        margin: 20px 0 200px 0;
+        line-height: 1em; 
+        padding:2px;
     }
-    
+
     #coursetable thead th {
-        padding: 4px 5px;
-        text-align: left;
+        padding: 2px;
+        font-size: 12px;
     }
 
     #coursetable td {
-        padding: 3px;
+        padding: 2px;
+        font-size: 12px;
     }
-
-   
 }
