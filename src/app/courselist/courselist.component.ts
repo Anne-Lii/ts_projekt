@@ -54,9 +54,6 @@ export class CourselistComponent {
     }
   }
   
-
-
-
   //function to search from searchinput
   searchCourses(): void {
     if (this.searchInput.trim() === "") {
