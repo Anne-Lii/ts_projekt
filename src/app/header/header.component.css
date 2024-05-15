@@ -6,18 +6,17 @@ header {
     background-position: center;
 }
 
-h1 {
-    padding: 50px 0 0 150px;
-    color: #fff;
-    font-size: 52px;
+img {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px 0 10px 10%;
 }
 
 #navcontainer {
     height: 50px;
     width: 100%;
     background-color: rgb(32, 100, 100);
-    position: relative;
-    top: 92px;
+   
 }
 
 nav ul {
@@ -51,14 +50,15 @@ nav ul li a {
         height: 150px;    
     }
 
-    h1 {
-        padding: 50px 0 0 30px;
-        font-size: 42px;
+    img {
+        width: 100%;
+        max-width: 120px;
+        padding: 10px 0 10px 10%;
     }
 
     #navcontainer {
         position: relative;
-        top: 50px;
+        top: 0;
     }
 
     nav ul li {

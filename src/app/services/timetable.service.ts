@@ -24,6 +24,7 @@ export class TimetableService {
       localStorage.setItem(this.localStorageKey, JSON.stringify(schedule));
     }
   }
+
   // function to remove a course from timetable
   removeFromMyCourses(courseCode: string): void {
     let schedule: CourseInterface[] = this.getMyCourses();
