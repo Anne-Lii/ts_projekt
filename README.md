@@ -14,3 +14,6 @@ gå in i mappen och installera projektet med npm `npm install`
 Angular
 HTML/CSS
 TypeScript
+
+Logotyp skapad med Adobe Firefly 
+Bilder gratis från unsplash
