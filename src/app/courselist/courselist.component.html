@@ -1,5 +1,3 @@
-
-
 <main id="main_home">
 
     <h2>M5 Universitetets kurser</h2>
@@ -32,7 +30,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let course of courselist| paginate:{itemsPerPage:20, currentPage:page, totalItems: totalLength}">
+                <tr
+                    *ngFor="let course of courselist| paginate:{itemsPerPage:20, currentPage:page, totalItems: totalLength}">
                     <td>{{course.courseCode}}</td>
                     <td>{{course.courseName}}</td>
                     <td>{{course.points}}</td>
@@ -43,9 +42,7 @@
             </tbody>
         </table>
         <div class="pagination">
-            <pagination-controls (pageChange) ="page=$event"></pagination-controls>
+            <pagination-controls (pageChange)="page=$event"></pagination-controls>
         </div>
     </div>
 </main>
-
-

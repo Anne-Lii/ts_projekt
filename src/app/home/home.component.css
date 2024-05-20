@@ -1,12 +1,13 @@
 #main_home {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto 100px auto;   
+    grid-template-rows: auto 100px auto;
     margin: auto;
     text-align: center;
     padding-bottom: 150px;
     max-width: 1260px;
 }
+
 h2 {
     padding: 30px;
     font-size: 32px;
@@ -22,7 +23,7 @@ h2 {
 
 /*text*/
 #grid1 {
-    font-size:24px;
+    font-size: 24px;
     font-family: 'Courier New', Courier, monospace, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-shadow: 5px 5px 10px grey;
     padding-top: 20px;
@@ -34,21 +35,18 @@ h2 {
     grid-column: 1/5;
     grid-row: 3/4;
     width: 98%;
-   
 }
 
 #grid3 {
     grid-column: 5/9;
     grid-row: 3/4;
     width: 98%;
-   
 }
 
 #grid4 {
     grid-column: 9/13;
     grid-row: 3/4;
     width: 98%;
-  
 }
 
 #grid5 {
@@ -62,7 +60,6 @@ h2 {
     grid-row: 4/5;
     width: 98%;
 }
-
 
 #img_uni,
 #img_education,
@@ -85,56 +82,57 @@ h2 {
     padding: 15px 0;
 }
 
-@media screen and (max-width: 612px)  {
+@media screen and (max-width: 612px) {
     #main_home {
         grid-template-columns: 100%;
         grid-template-rows: auto;
     }
 
-    h2 {   
-        padding-top: 80px;     
+    h2 {
+        padding-top: 80px;
         font-size: 28px;
         grid-column: 1/2;
         grid-row: 1/2;
     }
-    
+
     #grid1 {
-        font-size:24px;
+        font-size: 24px;
         font-family: 'Courier New', Courier, monospace, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         text-shadow: 5px 5px 10px grey;
         padding: 20px 30px;
         grid-column: 1/2;
-        grid-row: 2/3;       
+        grid-row: 2/3;
     }
 
     .image-container {
         margin: 5px 0;
     }
+
     #grid2 {
         grid-column: 1/2;
         grid-row: 3/4;
         width: 100%;
         padding-top: 40px;
     }
-    
+
     #grid3 {
         grid-column: 1/2;
         grid-row: 4/5;
         width: 100%;
     }
-    
+
     #grid4 {
         grid-column: 1/2;
         grid-row: 5/6;
         width: 100%;
     }
-    
+
     #grid5 {
         grid-column: 1/2;
         grid-row: 6/7;
         width: 100%;
     }
-    
+
     #grid6 {
         grid-column: 1/2;
         grid-row: 7/8;

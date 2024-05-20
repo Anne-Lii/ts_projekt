@@ -17,10 +17,5 @@ import { NgxPaginationModule } from 'ngx-pagination';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
-
   constructor() { }
-
-  
-
 }

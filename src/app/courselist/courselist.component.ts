@@ -53,7 +53,7 @@ export class CourselistComponent {
       this.totalLength = this.courselist.length; // Uppdatera totalLength med längden på den filtrerade listan
     }
   }
-  
+
   //function to search from searchinput
   searchCourses(): void {
     if (this.searchInput.trim() === "") {

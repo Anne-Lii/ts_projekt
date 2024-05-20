@@ -16,7 +16,6 @@ img {
     height: 50px;
     width: 100%;
     background-color: rgb(32, 100, 100);
-   
 }
 
 nav ul {
@@ -46,8 +45,8 @@ nav ul li a {
 
 @media screen and (max-width: 612px) {
 
-    header {       
-        height: 150px;    
+    header {
+        height: 150px;
     }
 
     img {
@@ -65,9 +64,9 @@ nav ul li a {
         padding: 15px 15px;
     }
 
-    nav ul li a {    
-        font-size: 12px;  
-        white-space: nowrap;    
+    nav ul li a {
+        font-size: 12px;
+        white-space: nowrap;
     }
 
     .current {

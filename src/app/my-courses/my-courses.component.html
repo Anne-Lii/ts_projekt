@@ -1,4 +1,3 @@
-
 <main id="main_timetable">
     <h2>Mitt ramschema</h2>
 
@@ -6,30 +5,30 @@
     <div id="quantity_timetable"> Antal kurser: {{myCourses.length}} st.</div>
 
     <div id="totalpoints">Totalt antal poäng: {{totalPoints}} HP</div>
-    
- <div id="table_container">
-    <table id="myCourseTable">
-        <thead>
-            <tr>
-                <th>Kurskod </th>
-                <th>Kursnamn </th>
-                <th>Poäng </th>
-                <th>Ämne </th>
-                <th>Kursplan</th>
-                <th>Ta Bort</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let course of myCourses">
-                <td>{{course.courseCode}}</td>
-                <td>{{course.courseName}}</td>
-                <td>{{ course.points }}</td>
-                <td>{{ course.subject }}</td>
-                <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
-                <td  id="removeBtnSection"><button id="removeBtn" (click)="removeCourse(course)">X</button></td>
-            </tr>
-        </tbody>
-    </table>
- </div>
+
+    <div id="table_container">
+        <table id="myCourseTable">
+            <thead>
+                <tr>
+                    <th>Kurskod </th>
+                    <th>Kursnamn </th>
+                    <th>Poäng </th>
+                    <th>Ämne </th>
+                    <th>Kursplan</th>
+                    <th>Ta Bort</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of myCourses">
+                    <td>{{course.courseCode}}</td>
+                    <td>{{course.courseName}}</td>
+                    <td>{{ course.points }}</td>
+                    <td>{{ course.subject }}</td>
+                    <td><a [href]="course.syllabus" target="_blank">Kursplan</a></td>
+                    <td id="removeBtnSection"><button id="removeBtn" (click)="removeCourse(course)">X</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </main>
