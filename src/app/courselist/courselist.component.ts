@@ -52,6 +52,7 @@ export class CourselistComponent {
       this.filteredCount = this.courselist.length;
       this.totalLength = this.courselist.length; // Uppdatera totalLength med längden på den filtrerade listan
     }
+    this.page =1; //reset page to page one
   }
 
   //function to search from searchinput
@@ -74,7 +75,10 @@ export class CourselistComponent {
   resetCourses(): void {
     this.courselist = [...this.originalCourselist];
     this.filteredCount = this.courselist.length;
-    this.extractUniqueSubjects(); // Uppdatera unika ämnen till att inkludera alla ämnen
+    this.totalLength = this.courselist.length;
+    this.extractUniqueSubjects(); // Update unique subjects to include all courses
+
+    this.page =1; //reset page to page one
   }
 
 
