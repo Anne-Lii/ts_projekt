@@ -1,9 +1,0 @@
-[build]
-base = "/"
-command = "ng build"
-publish = "dist/projekt_ts_annelii_hansen/browser
-
-[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200

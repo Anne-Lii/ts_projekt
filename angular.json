@@ -82,7 +82,7 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "netlify.toml"
+              "src/_redirects"
             ],
             "styles": [
              
