@@ -7,8 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { TimetableService } from '../services/timetable.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-
-
 @Component({
   selector: 'app-courselist',
   standalone: true,
@@ -18,16 +16,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
 })
 export class CourselistComponent {
 
-  originalCourselist: CourseInterface[] = [];//store the original list of courses
-  courselist: CourseInterface[] = [];//Array to store list with courses
+  originalCourselist: CourseInterface[] = [];//store the original list of all courses
+  courselist: CourseInterface[] = [];//Array to store the current list of courses
   uniqueSubjects: string[] = [];//Array to store unique subjects
-  filteredCount: number = 0;//number of courses set to 0
+  filteredCount: number = 0;//number of filteredcourses. First set to 0
   searchInput: string = "";//empty string for searchinput
   currentSortColumn: keyof CourseInterface = "courseCode"; //starting with courseCode sorted
-  isSortAscending: boolean = true;//sortingdirection  
-  totalLength: number = 0;
-  page: number = 1;//start on page one
-
+  isSortAscending: boolean = true;//sorting direction  
+  totalLength: number = 0; //total number of courses
+  page: number = 1;//current page, starts on page one
 
   constructor(
     private coursedataservice: CoursedataService, //inject coursedataservie
@@ -35,14 +32,15 @@ export class CourselistComponent {
 
   ) { }
 
-  //subscribe to the getCourses method
+  //subscribe to the getCourses method to initialize course data
   ngOnInit() {
     this.coursedataservice.getCourses().subscribe(data => {
-      this.originalCourselist = data; // Initialize originalCourselist
+      this.originalCourselist = data;
       this.updateDisplayedCourses();
     });
   }
 
+  //Filter courses by selected subject
   filterCoursesBySubject(event: any): void {
     const selectedSubject = event.target.value;
     if (!selectedSubject || selectedSubject === "all") {
@@ -50,25 +48,27 @@ export class CourselistComponent {
     } else {
       this.courselist = this.originalCourselist.filter(course => course.subject === selectedSubject);
       this.filteredCount = this.courselist.length;
-      this.totalLength = this.courselist.length; // Uppdatera totalLength med längden på den filtrerade listan
+      this.totalLength = this.courselist.length; // Update totalLength with the length of the filtered list
     }
-    this.page =1; //reset page to page one
+    this.page = 1; //reset page to page one
   }
 
-  //function to search from searchinput
+  //function to search courses based on  search input
   searchCourses(): void {
     if (this.searchInput.trim() === "") {
-      this.resetCourses();
+      this.resetCourses();// Reset courses if search input is empty
       return;
     }
 
+    //change to lowercase
     this.courselist = this.originalCourselist.filter(course =>
       course.courseCode.toLowerCase().includes(this.searchInput.toLowerCase()) ||
       course.courseName.toLowerCase().includes(this.searchInput.toLowerCase()) ||
       course.subject.toLowerCase().includes(this.searchInput.toLowerCase())
     );
     this.filteredCount = this.courselist.length;
-    this.extractUniqueSubjects();
+    this.totalLength = this.courselist.length; // Update total length
+    this.page = 1; // Reset to the first page
   }
 
   // Function to reset courselist to its original state
@@ -78,9 +78,8 @@ export class CourselistComponent {
     this.totalLength = this.courselist.length;
     this.extractUniqueSubjects(); // Update unique subjects to include all courses
 
-    this.page =1; //reset page to page one
+    this.page = 1; //reset page to page one
   }
-
 
   //function to sort courses based on selected headline
   sortCourses(column: keyof CourseInterface): void {
@@ -98,22 +97,26 @@ export class CourselistComponent {
       }
     });
 
-    this.courselist.reverse();
-    this.isSortAscending = !this.isSortAscending;
+    this.courselist.reverse();// Reverse the sorted list to alternate between ascending and descending
+    this.isSortAscending = !this.isSortAscending; // Toggle the sorting direction
   }
 
-  //call addToMyCourses from timetable service
+  //Function to add a course to the timetable
   addToMyCourses(course: CourseInterface): void {
     this.timeTableService.addToMyCourses(course);
   }
+
+  //extract unique subjects from the courselist
   extractUniqueSubjects(): void {
     this.uniqueSubjects = Array.from(new Set(this.courselist.map(course => course.subject)));
   }
 
+  //update the displayed courses to match the original course list.
   updateDisplayedCourses(): void {
     this.courselist = [...this.originalCourselist];
     this.filteredCount = this.courselist.length;
-    this.extractUniqueSubjects();
+    this.totalLength = this.courselist.length;
+    this.extractUniqueSubjects();// Update unique subjects
   }
 
 }
