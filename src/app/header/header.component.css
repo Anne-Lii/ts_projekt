@@ -12,6 +12,7 @@ img {
     padding: 10px 0 10px 10%;
 }
 
+/* navigation */
 #navcontainer {
     height: 50px;
     width: 100%;
@@ -43,6 +44,7 @@ nav ul li a {
     padding: 11px;
 }
 
+/* css for screens smaller than 612 pixels */
 @media screen and (max-width: 612px) {
 
     header {

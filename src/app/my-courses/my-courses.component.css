@@ -15,6 +15,7 @@ h2 {
     color: rgb(87, 83, 83);
 }
 
+/* table with choosen courses */
 #myCourseTable {
     width: 100%;
     margin: auto;
@@ -44,6 +45,7 @@ h2 {
     padding: 10px 5px;
 }
 
+/* Button to remove courses from timetable */
 #removeBtnSection {
     text-align: center;
 }
@@ -57,6 +59,7 @@ h2 {
     padding: 0 3px;
 }
 
+/* css for smaller screens then 612 pixels */
 @media screen and (max-width: 612px) {
 
     h2 {

@@ -3,20 +3,25 @@
     <h2>M5 Universitetets kurser</h2>
     <p>Sök bland våra kurser och skapa ditt egna ramschema. </p>
 
+    <!-- search input to search courses and coursecode -->
     <label for="search">Sök kurser: </label>
     <input type="text" id="search" name="search" [(ngModel)]="searchInput" (input)="searchCourses()">
     <br><br>
 
+    <!-- select with all the unique subjects  -->
     <label for="subjectFilter">Ämne: </label>
     <select name="subjectFilter" id="subjectFilter" (change)="filterCoursesBySubject($event)">
         <option value="">Alla ämnen</option>
         <option *ngFor="let subject of uniqueSubjects" [value]="subject" id="sub">{{ subject }}</option>
     </select>
 
+    <!-- div that shows a message saying there is no courses if array is empty -->
     <div *ngIf="courselist.length === 0" class="no-courses-message">Inga kurser hittades.</div>
 
+    <!-- div that shows how many courses is showing right now -->
     <div id="quantity"> Antal kurser: {{ filteredCount }} st.</div>
 
+    <!-- Table with all courses and link to syllabus and button to add course to the timetable -->
     <div id="table_container">
         <table id="coursetable">
             <thead>
@@ -41,6 +46,8 @@
                 </tr>
             </tbody>
         </table>
+
+        <!-- Div with pagination -->
         <div class="pagination">
             <pagination-controls (pageChange)="page=$event"></pagination-controls>
         </div>

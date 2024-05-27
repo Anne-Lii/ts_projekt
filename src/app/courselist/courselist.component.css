@@ -22,27 +22,31 @@ input {
     width: 300px;
 }
 
+/* select element with all subjects */
 select {
     height: 32px;
     width: 333px;
 }
 
+/* total number of courses showing right now */
 #quantity {
     padding: 30px 0 20px 50px;
     font-size: 20px;
     color: rgb(116, 111, 111);
 }
 
+/* table with courses */
 #table_container {
     width: 100%;
     margin-bottom: 200px;
     overflow-x: auto
+        /* to be able to scroll the list to the side if it does not fit on screen */
 }
 
 #coursetable {
     width: 100%;
     margin: auto;
-    line-height: 1.2em; 
+    line-height: 1.2em;
     padding: 30px;
     margin-bottom: 20px;
     border: 1px solid lightgrey;
@@ -96,39 +100,34 @@ select {
     color: rgb(243, 146, 18);
 }
 
-.added-course-message {
-    padding: 20px 0 0 50px;
-    font-size: 18px;
-    color: rgb(243, 146, 18);
-}
-
+/* Pagination */
 .pagination {
-    padding:10px 15px;
+    padding: 10px 15px;
     color: #000;
     float: right;
 }
 
-.pagination::ng-deep .ngx-pagination .current{
+.pagination::ng-deep .ngx-pagination .current {
     background-color: rgb(32, 100, 100);
 }
-  
 
+/* css for smaller screens than 712 pixels */
 @media screen and (max-width: 712px) {
 
     h2 {
         padding: 90px 0 20px 30px;
         font-size: 28px;
-        
     }
+
     p {
         font-size: 12px;
         padding: 0 0 20px 30px;
-        
     }
+
     label {
         padding: 20px 0 20px 30px;
     }
-    
+
     input {
         margin: 0 0 0 30px;
     }
@@ -143,8 +142,8 @@ select {
     }
 
     #coursetable {
-        line-height: 1em; 
-        padding:2px;
+        line-height: 1em;
+        padding: 2px;
     }
 
     #coursetable thead th {

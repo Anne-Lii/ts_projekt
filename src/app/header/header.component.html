@@ -1,8 +1,13 @@
 <header>
-    <a routerLink="/home"><img src="assets/images/logo.png" alt="logotype"></a>
+
+    <!-- logotype linked with routerLink to startpage -->
+    <a routerLink="/home"><img src="assets/images/logo.png" alt="logotype"></a> 
+
+    <!-- navigation -->
     <div id="navcontainer">
         <nav>
             <ul>
+                <!-- li elements and links are linked with routerLink. And routerLinkActive to set css for active links -->
                 <li><a routerLink="/home" routerLinkActive="current">Startsida</a></li>
                 <li><a routerLink="/courselist" routerLinkActive="current">Alla kurser</a></li>
                 <li><a routerLink="/mycourses" routerLinkActive="current">Mitt ramschema</a></li>
